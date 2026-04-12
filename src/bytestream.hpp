@@ -234,8 +234,6 @@ class Serializer {
     template <typename T>
     requires traits::Tuple<T>
     Serializer& operator<<(const T& tuple) {
-        constexpr size_t sizeOfTuple = std::tuple_size_v<T>;
-        (*this) << sizeOfTuple;
         std::apply([this](auto... elements) { (((*this) << elements), ...); }, tuple);
         return *this;
     }
@@ -376,8 +374,6 @@ class Deserializer {
     template <typename T>
     requires traits::Tuple<T>
     Deserializer& operator>>(T& tuple) {
-        size_t sizeOfTuple;
-        (*this) >> sizeOfTuple;
         std::apply([this](auto&... elements) { (((*this) >> elements), ...); }, tuple);
         return *this;
     }

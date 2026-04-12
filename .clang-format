@@ -1,0 +1,47 @@
+# .clang-format
+Language: Cpp
+Standard: c++20
+
+# Indentation
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ContinuationIndentWidth: 4
+
+# Braces
+BreakBeforeBraces: Attach
+
+# Line length
+ColumnLimit: 100
+
+# Alignment
+AlignConsecutiveDeclarations: false
+AlignConsecutiveAssignments: false
+AlignTrailingComments: true
+
+# Spacing
+SpaceBeforeParens: ControlStatements
+SpaceInEmptyParentheses: false
+SpacesInAngles: Never
+SpaceAfterTemplateKeyword: true
+
+# Templates and requires
+IndentRequiresClause: false
+RequiresClausePosition: OwnLine
+AlwaysBreakTemplateDeclarations: Yes
+
+# Functions
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+
+# Includes
+SortIncludes: CaseInsensitive
+IncludeBlocks: Regroup
+
+# Pointer alignment
+PointerAlignment: Left
+
+# Namespaces
+NamespaceIndentation: None
+CompactNamespaces: false

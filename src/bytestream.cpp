@@ -4,7 +4,11 @@
 namespace ByteStream {
 
 Serializer::Serializer(const std::string& filename) {
-    stream.open(filename, std::ios::binary | std::ios::app);
+    stream.open(filename, std::ios::binary | std::ios::trunc);
+    if(!stream.is_open())
+    {
+        throw std::runtime_error("Failed to open file to write");
+    }
 }
 
 Serializer::~Serializer() {
@@ -21,6 +25,10 @@ void Serializer::close() {
 
 Deserializer::Deserializer(const std::string& filename) {
     stream.open(filename, std::ios::binary);
+    if(!stream.is_open())
+    {
+        throw std::runtime_error("Failed to open file to read");
+    }
 }
 
 Deserializer::~Deserializer() {

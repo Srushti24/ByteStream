@@ -516,15 +516,21 @@ void testClassesAndNested() {
 }
 
 int main() {
-    testingPrimitiveTypes();
-    testNestedTypes();
-    testPrimitiveTypesTwo();
-    testEnumTypes();
-    testPairTypes();
-    testOptionalTypes();
-    testSetTypes();
-    testEdgeCases();
-    testTupleTypes();
-    testClassesAndNested();
+    try {
+        testingPrimitiveTypes();
+        testNestedTypes();
+        testPrimitiveTypesTwo();
+        testEnumTypes();
+        testPairTypes();
+        testOptionalTypes();
+        testSetTypes();
+        testEdgeCases();
+        testTupleTypes();
+        testClassesAndNested();
+        std::cout << "All tests passed!" << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << "Test failed: " << e.what() << std::endl;
+        return 1;
+    }
     return 0;
 }
